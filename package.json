@@ -1,0 +1,36 @@
+{
+  "name": "tuto-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean:cache": "del ./.cache",
+    "clean:dist": "del ./dist",
+    "clean:all": "npm run clean:cache ; npm run clean:dist",
+    "dev:step1": "./node_modules/.bin/parcel ./src/step1/index.html",
+    "dev:step2": "./node_modules/.bin/parcel ./src/step2/index.html",
+    "dev:step3": "./node_modules/.bin/parcel ./src/step3/index.html",
+    "dev:step4": "./node_modules/.bin/parcel ./src/step4/index.html",
+    "build:step4": "npm run clean:all ; ./node_modules/.bin/parcel build ./src/step4/index.html",
+    "build:step5": "npm run clean:all ; ./node_modules/.bin/parcel build ./src/step5/notify/notify.module.ts"
+  },
+  "main": "dist/notify.module.js",
+	"targets": {
+		"main": {
+			"outputFormat": "esmodule"
+		}
+	},
+  "keywords": [],
+  "author": "hex46",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "del-cli": "^4.0.1",
+    "parcel-bundler": "^1.12.5",
+    "postcss": "^8.3.8",
+    "postcss-modules": "^4.2.2",
+    "sass": "^1.42.1",
+    "typescript": "^4.4.3"
+  }
+}
