@@ -1,6 +1,12 @@
 import './styles.scss'
 // @ts-ignore
-import view from './view.html'
+import view from 'bundle-text:./view.html'
+
+declare global {
+  interface Window {
+    notify: Notify;
+  }
+}
 
 export default class Notify {
 
@@ -9,8 +15,11 @@ export default class Notify {
   constructor( message: string) {
     this.message = message;
 
-    this.initHtml()
-    window['notify'] = this; // Pour accéder au module dans le DOM
+    this.initHtml();
+  }
+
+  asGlobalVariable() {
+    window.notify = this;
   }
 
   initHtml() {

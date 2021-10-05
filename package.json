@@ -10,24 +10,27 @@
     "dev:step2": "./node_modules/.bin/parcel ./src/step2/index.html",
     "dev:step3": "./node_modules/.bin/parcel ./src/step3/index.html",
     "dev:step4": "./node_modules/.bin/parcel ./src/step4/index.html",
+    "dev:step5": "./node_modules/.bin/parcel ./src/step5/index.html",
     "build:step4": "npm run clean:all ; ./node_modules/.bin/parcel build ./src/step4/index.html",
     "build:step5": "npm run clean:all ; ./node_modules/.bin/parcel build ./src/step5/notify/notify.module.ts"
   },
-  "main": "dist/notify.module.js",
-	"targets": {
-		"main": {
-			"outputFormat": "esmodule"
-		}
-	},
+  "source": "src/step5/notify/notify.module.ts",
+  "module": "dist/step5/module.js",
+  "main": "dist/main.js",
+  "targets": {
+    "main": false
+  },
   "keywords": [],
   "author": "hex46",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
     "autoprefixer": "^9.0.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "del-cli": "^4.0.1",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.0.0-rc.0",
     "postcss": "^8.3.8",
     "postcss-modules": "^4.2.2",
     "sass": "^1.42.1",
